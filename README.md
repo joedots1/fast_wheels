@@ -3,8 +3,10 @@
 <h2>FastAPI, MongoDB, Docker</h2>
 <br>
 
-[[License](https://camo.githubusercontent.com/d91ed7ac7abbd5a6102cbe988dd8e9ac21bde0a73d97be7603b891ad08ce3479/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f64652532307374796c652d626c61636b2d3030303030302e737667)
-
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fimg.shields.io%2Ftwitter%2Furl%3Fstyle%3Dsocial%26url%3Dhttps%253A%252F%252Fgithub.com%252Fjoedots1%252Ffast_wheels)
+<br>
 1. git clone https://github.com/joedots1/fast_wheels.git
 2. docker-compose up --build 
 3. check 127.0.0.1:8000/docs 
