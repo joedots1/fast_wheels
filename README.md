@@ -19,7 +19,7 @@
         docker-compose up --build
 
 3. Check The API 
-        <127.0.0.1:8000/docs>
+<127.0.0.1:8000/docs>
 
 4. Attach shell to mongodb container:
 
