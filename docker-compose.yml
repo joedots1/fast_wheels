@@ -1,0 +1,43 @@
+version: '3.7'
+
+services:
+  web:
+    build: 
+      context: .
+      dockerfile: app/Dockerfile
+    ports:
+      - 8000:8000
+    environment:
+      - ENVIRONMENT=dev
+      - TESTING=1
+    depends_on:
+      - mongodb
+    networks:
+      - backend
+  
+  mongodb:
+    image: mongo:${MONGO_TAG}
+    build:
+      context: ./mongo
+      dockerfile: Dockerfile
+    container_name: mongodb
+    restart: unless-stopped
+    command: mongod --auth
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PW}
+      MONGODB_DATA_DIR: /data/db
+      MONDODB_LOG_DIR: /dev/null
+    volumes:
+      - mongodbdata:/data/db
+    networks:
+      - backend
+
+
+networks:
+  backend:
+    driver: bridge
+
+volumes:
+  mongodbdata:
+    driver: local

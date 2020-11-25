@@ -1,0 +1,6 @@
+/.vscode
+/new_car_data
+app/__pycache__
+scrapers/__pycache__
+scratchnotes.rst
+poetry.lock
