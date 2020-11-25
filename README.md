@@ -3,7 +3,8 @@
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fimg.shields.io%2Ftwitter%2Furl%3Fstyle%3Dsocial%26url%3Dhttps%253A%252F%252Fgithub.com%252Fjoedots1%252Ffast_wheels)
+![Twitter Follow](https://img.shields.io/twitter/follow/joeDot2?style=social)
+
 <br>
 
 <h2>FastAPI, MongoDB, Docker</h2>
