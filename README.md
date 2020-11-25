@@ -28,5 +28,6 @@
         mongo -u admin -p admin
         use admin 
 
-7. create text search index on model 
+7. create text search index on model
+
         db.car_collection.createIndex({model:"text"})
