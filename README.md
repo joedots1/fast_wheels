@@ -9,30 +9,29 @@
 <h2>FastAPI, MongoDB, Docker</h2>
 <br>
 
-
-1. Clone the repo
+1.  Clone the repo
 
         git clone https://github.com/joedots1/fast_wheels.git
 
-2. Build the Docker Containers
+2.  Build the Docker Containers
 
         docker-compose up --build
 
-3. Check The API - 0.0.0.0:8000/docs
+3.  Check The API - 0.0.0.0:8000/docs
 
-4. Attach shell to mongodb container:
+4.  Attach shell to mongodb container:
 
         docker exec -it mongodb /bin/bash
 
-5. Seed the mongo db
+5.  Seed the mongo db
 
-        mongoimport --db admin --collection car_collection -u admin -p - admin --file all_cars.json --jsonArray
+        mongoimport --jsonArray --db admin -u admin -p admin --collection car_colletion all_cars.json
 
-6. Open mongo shell
+6.  Open mongo shell
 
         mongo -u admin -p admin
-        use admin 
+        use admin
 
-7. Create text search index on model
+7.  Create text search index on model
 
         db.car_collection.createIndex({model:"text"})
