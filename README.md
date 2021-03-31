@@ -25,7 +25,7 @@
 
 5.  Seed the mongo db
 
-        mongoimport --jsonArray --db admin -u admin -p admin --collection car_colletion all_cars.json
+        mongoimport --jsonArray --db admin -u admin -p admin --collection car_collection all_cars.json
 
 6.  Open mongo shell
 
