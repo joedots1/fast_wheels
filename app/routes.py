@@ -11,7 +11,7 @@ from app.database import (
     update_car,
     car_model_search,
     retrieve_series,
-    retrieve_year
+    retrieve_year,
 )
 from app.models import ErrorResponseModel, ResponseModel, CarSchema, UpdateCarModel
 
@@ -54,7 +54,7 @@ async def delete_car_data(id: str):
 
 
 @router.put("/{id}")
-async def update_student_data(id: str, req: UpdateCarModel = Body(...)):
+async def update_car_data(id: str, req: UpdateCarModel = Body(...)):
     req = {key: val for key, val in req.dict().items() if val is not None}
     updated_car = await update_car(id, req)
     if updated_car:
@@ -77,6 +77,7 @@ async def search_models(model):
         return ResponseModel(cars, "car data retrieved successfully")
     return ResponseModel(cars, "Empty list returned")
 
+
 # list series names
 @router.get("/series/{series}", response_description="all series names")
 async def get_series(series):
@@ -84,6 +85,7 @@ async def get_series(series):
     if cars:
         return ResponseModel(cars, "series data retrieved successfully")
     return ResponseModel(cars, "Empty list returned")
+
 
 # get all cars run in a given year
 @router.get("/year/{year}", response_description="all cars in a given year")

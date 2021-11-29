@@ -13,7 +13,7 @@ MONGO_DETAILS = f"mongodb://{USER}:{PASS}@mongodb:{PORT}/{DB}"
 
 client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_DETAILS)
 
-database = client['admin']
+database = client["admin"]
 
 car_collection = database.get_collection("car_collection")
 
@@ -78,10 +78,13 @@ async def delete_car(id: str):
         await car_collection.delete_one({"_id": ObjectId(id)})
         return True
 
+
 # search cars by model
 async def car_model_search(model: str) -> dict:
     cars = []
-    async for car in car_collection.find({"$text": {"$search": model}}).sort([('score', {'$meta': 'textScore'})]):
+    async for car in car_collection.find({"$text": {"$search": model}}).sort(
+        [("score", {"$meta": "textScore"})]
+    ):
         cars.append(car_helper(car))
     return cars
 
@@ -89,7 +92,7 @@ async def car_model_search(model: str) -> dict:
 # get all cars in a series
 async def retrieve_series(series: str) -> dict:
     cars = []
-    async for car in car_collection.find({"series":series}):
+    async for car in car_collection.find({"series": series}):
         cars.append(car_helper(car))
     return cars
 
@@ -97,6 +100,6 @@ async def retrieve_series(series: str) -> dict:
 # get all cars run in a given year
 async def retrieve_year(year: int) -> dict:
     cars = []
-    async for car in car_collection.find({"year":year}):
+    async for car in car_collection.find({"year": year}):
         cars.append(car_helper(car))
     return cars
